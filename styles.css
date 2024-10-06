@@ -1,0 +1,112 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    display: flex;
+    flex-direction: column; /* Dirección de columna */
+    justify-content: space-between; /* Espacio entre elementos */
+    height: 100vh;
+    background: linear-gradient(to bottom right, #2c3e50, #34495e); /* Fondo del body */
+}
+
+.game-container {
+    position: relative;
+    width: 100vw;
+    height: 65vh; /* Reducir la altura del contenedor del juego */
+    overflow: hidden;
+    background: linear-gradient(135deg, #ecf0f1, #bdc3c7); /* Fondo del juego */
+    border: 2px solid #333;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.character {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background-color: #3498db;
+    bottom: 20px;
+    left: 50px;
+}
+
+.obstacle {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background-color: #e74c3c;
+    bottom: 20px;
+    left: 100%;
+    animation: moveObstacle 2s linear infinite; /* Aumentar velocidad de movimiento */
+}
+
+@keyframes moveObstacle {
+    0% {
+        left: 100%;
+    }
+    100% {
+        left: -30px;
+    }
+}
+
+.scoreboard {
+    text-align: center;
+    font-size: 20px;
+    margin-top: 10px;
+}
+
+.start-message {
+    display: flex; /* Usar flex para centrar */
+    flex-direction: column; /* Dirección de columna */
+    align-items: center; /* Centrar horizontalmente */
+    justify-content: center; /* Centrar verticalmente */
+    height: 100%; /* Ocupa toda la altura disponible */
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    background: linear-gradient(135deg, #ff7675, #ffb142); /* Fondo del mensaje de inicio */
+    color: white; /* Color de texto */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Ajustar la visualización en móviles */
+@media (max-width: 600px) {
+    .game-container {
+        height: 60vh; /* Ajustar la altura del contenedor en móviles */
+    }
+    .controls {
+        flex-direction: row; /* Alinear controles horizontalmente */
+    }
+    button {
+        width: 100%; /* Hacer botones de ancho completo */
+        margin: 5px 0; /* Espaciado entre botones */
+    }
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+    margin: 10px 0; /* Espaciado vertical */
+    position: relative; /* Posición relativa para ajustar el espacio */
+    bottom: 10px; /* Elevar los botones */
+}
+
+button {
+    padding: 15px 25px; /* Aumentar tamaño de botones */
+    margin: 0 5px;
+    font-size: 18px; /* Aumentar tamaño de fuente */
+    cursor: pointer;
+    border: none; /* Sin borde */
+    border-radius: 5px; /* Bordes redondeados */
+    background-color: #3498db; /* Color de fondo de los botones */
+    color: white; /* Color de texto de los botones */
+    transition: background-color 0.3s, transform 0.3s; /* Transiciones para efectos */
+}
+
+button:hover {
+    background-color: #2980b9; /* Color al pasar el ratón */
+    transform: scale(1.05); /* Efecto de escala */
+}
+
+
+
